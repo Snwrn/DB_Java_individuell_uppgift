@@ -8,14 +8,19 @@ import java.util.List;
 
 public interface ITransactionRepository {
 
-    void delete(int todoId) throws Exception;
-
+    //add new transaction
     void saveTransactions(double amount, boolean isDeposit) throws IOException;
 
+    //load the list of all transactions
     List<Transaction> loadTransactions() throws Exception;
 
+    //Get balance of all transations
     double getCurrentBalance();
 
+    //remove transaction from memory
+    void delete(int todoId) throws Exception;
+
+    //Filter functions
     List<Transaction> findByYear(int year) throws Exception;
 
     List<Transaction> findByMonth(int year, int month) throws Exception;

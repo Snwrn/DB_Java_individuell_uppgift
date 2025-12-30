@@ -8,6 +8,7 @@ import java.util.List;
 
 
 public class TransactionService {
+    //Service has a list that is filled from the database
     public static final ITransactionRepository repository = new DBTransactionRepository();
     public static List<Transaction> transactions;
 

@@ -103,7 +103,7 @@ public class FilterTransactions extends Command {
             }
         }
 
-        // By week
+        // By week, works with an array
         else if (usersFilterChoice == FilterChoice.BY_WEEK.getID()) {
             int year = FilterHelper.getYearFromUserInput();
             int week = FilterHelper.getWeekNumberFromUserInput();

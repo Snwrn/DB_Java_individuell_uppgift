@@ -11,7 +11,7 @@ public class TerminalCommandService implements ICommandService {
 
     private final List<Command> commands = new ArrayList<>();
 
-
+//Terminal that displays menu and gets user input. also exits the program
     public void start() {
         System.out.println("=== APPLICATION ===");
         Scanner scanner = ScannerHelper.getScanner();

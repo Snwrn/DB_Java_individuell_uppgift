@@ -14,6 +14,7 @@ public class DBTransactionRepository implements ITransactionRepository {
 
     public Connection conn;
 
+    //create table if not exists
     public DBTransactionRepository() {
         try {
             conn = se.deved.utility.DBConnectionHelper.getConnection();
@@ -30,6 +31,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         }
     }
 
+    //Get current balance
     @Override
     public double getCurrentBalance() {
 
@@ -46,6 +48,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         return 0;
     }
 
+    //delete a transaction
     @Override
     public void delete(int id) throws Exception {
         try (PreparedStatement statement = conn.prepareStatement("DELETE FROM transactions WHERE id = ?")) {
@@ -54,6 +57,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         }
     }
 
+    //add a transaction to the database, used in addTransaction
     @Override
     public void saveTransactions(double amount, boolean isDeposit) throws IOException {
         try {
@@ -66,6 +70,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         }
     }
 
+    //get transactions from the database
     @Override
     public List<Transaction> loadTransactions() throws SQLException {
 
@@ -89,6 +94,8 @@ public class DBTransactionRepository implements ITransactionRepository {
         return transactions;
     }
 
+
+    //Filter functions:
     @Override
     public List<Transaction> findByYear(int year) throws Exception {
 
@@ -128,6 +135,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         }
     }
 
+    //Filter by month
     public List<Transaction> findByMonth(int year, int month) throws Exception {
 
         String sql = """
@@ -166,8 +174,7 @@ public class DBTransactionRepository implements ITransactionRepository {
         }
     }
 
-
-
+    //Filter by day
     @Override
     public List<Transaction> findByDay(LocalDate day) throws Exception {
 

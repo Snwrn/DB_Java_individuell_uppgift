@@ -35,6 +35,7 @@ public class Transaction {
         return id;
     }
 
+    //To string method to print the transactions in a readable way
     @Override
     public String toString() {
         return transactionDate +

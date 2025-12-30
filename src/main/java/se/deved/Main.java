@@ -17,14 +17,14 @@ public class Main {
         commandService.registerCommand(new SeeBalance());
         commandService.registerCommand(new SeeTransactionHistory());
         commandService.registerCommand(new FilterTransactions());
-        
+
         commandService.start();
 
+        //closes the database connection
         try {
             se.deved.utility.DBConnectionHelper.getConnection().close();
         } catch (SQLException exception) {
             exception.printStackTrace();
-            return;
         }
     }
 }

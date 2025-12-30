@@ -11,6 +11,7 @@ public class AddTransaction extends Command {
         super("Add a new transaction", "Add a new deposit or withdrawal.");
     }
 
+    //Asks user to decide if deposit or withdrawal is created
     @Override
     public void execute() throws IOException {
         System.out.println("1. Deposit (add money to the account)");
@@ -25,6 +26,7 @@ public class AddTransaction extends Command {
         backToMenu();
     }
 
+    //handles transaction type choice
     private int getTransactionType(Scanner scanner) {
         while (true) {
             System.out.print("Choose transaction type (1 or 2): ");
@@ -36,6 +38,7 @@ public class AddTransaction extends Command {
         }
     }
 
+    //If deposit is created
     private void handleDeposit(Scanner scanner) throws IOException {
 
         System.out.print("Write how much is added to your account:");
@@ -49,6 +52,7 @@ public class AddTransaction extends Command {
         repository.saveTransactions(amount, true);
     }
 
+    //If withdrawal is created
     private void handleWithdrawal(Scanner scanner) throws IOException {
         System.out.print("Write how much is withdrawn from your account:");
         double amount = se.deved.utility.InputHelper.getValidAmount(scanner);

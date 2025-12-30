@@ -2,7 +2,7 @@ package se.deved.utility;
 
 import java.util.Scanner;
 
-//Unified scanner
+//A unified scanner
 
 public class ScannerHelper {
     private static final Scanner scanner = new Scanner(System.in);

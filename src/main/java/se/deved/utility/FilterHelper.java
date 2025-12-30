@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class FilterHelper {
 
+    //This helps to count amount of all the filtered transactions and also prints the filtered transactions
     public static double processTransaction(Transaction t, int filterTypeChoice, double total) {
         if (t.getIsDeposit() && filterTypeChoice == 1) {
             System.out.println("Deposit: " + t.getFormattedAmount() + " *** Date:" + t.getDate() + ";");
@@ -49,6 +50,7 @@ public class FilterHelper {
         return filterYear;
     }
 
+    //Gets a year and a month for the month filter
     public static int getMonthFromUserInput() {
         Scanner scanner = ScannerHelper.getScanner();
         int month = 0;
@@ -69,6 +71,7 @@ public class FilterHelper {
         return month;
     }
 
+    //Gets the exact date from the user in a specific format
     public static LocalDate getDayFromUserInput() {
         Scanner scanner = ScannerHelper.getScanner();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -85,6 +88,7 @@ public class FilterHelper {
         return date;
     }
 
+    //Gets weeknumber from the user
     public static int getWeekNumberFromUserInput() {
         Scanner scanner = ScannerHelper.getScanner();
         int week = 0;
@@ -104,6 +108,7 @@ public class FilterHelper {
         }
         return week;
     }
+
 
     public static int getWeekOfYear(LocalDate date) {
         return date.get(WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear());

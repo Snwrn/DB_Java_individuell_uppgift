@@ -1,6 +1,8 @@
 package se.deved.utility;
 
 import java.util.Scanner;
+
+//Validates input
 public class InputHelper {
     public static double MAX_AMOUNT = 1000000000000000.00;
     public static double getValidAmount(Scanner scanner) {

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import static se.deved.service.TransactionService.repository;
 
+//for menu items, aka commands
 public abstract class Command {
     private static int nextId = 1;
     protected final String name;
@@ -22,6 +23,7 @@ public abstract class Command {
 
     public abstract void execute() throws IOException;
 
+    //goes back to menu with a little delay animation
     public void backToMenu() {
         System.out.print("Going back to menu");
         try {
@@ -36,6 +38,7 @@ public abstract class Command {
         System.out.println();// move to new line after dots
     }
 
+    //prints anoverview of all transactions
     protected void printTransactionSummary() {
         try {
             var transactions = repository.loadTransactions();

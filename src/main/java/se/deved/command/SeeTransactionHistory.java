@@ -10,11 +10,14 @@ public class SeeTransactionHistory extends Command {
     @Override
     public void execute() {
         try {
-        var transactions = repository.loadTransactions();
+        //Get list from the database
+            var transactions = repository.loadTransactions();
 
+        //if db is empty, inform the user
         if (transactions.isEmpty()) {
             System.out.println("No transactions found.");
         } else {
+            //else, show the ids, dates, amounts and type of all tranactions
             for (var t : transactions) {
                 System.out.println(
                         t.getId() + " | " +
