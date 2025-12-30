@@ -1,7 +1,5 @@
 package se.deved.command;
 
-import se.deved.models.Transaction;
-import se.deved.utility.DoubleFormatHelper;
 import se.deved.utility.ScannerHelper;
 
 import java.io.IOException;
@@ -53,7 +51,6 @@ public abstract class Command {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return;
         }
     }
 

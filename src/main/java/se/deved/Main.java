@@ -17,8 +17,7 @@ public class Main {
         commandService.registerCommand(new SeeBalance());
         commandService.registerCommand(new SeeTransactionHistory());
         commandService.registerCommand(new FilterTransactions());
-
-        //if (commandService instanceof TerminalCommandService service) {
+        
         commandService.start();
 
         try {

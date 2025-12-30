@@ -1,9 +1,6 @@
 package se.deved.command;
 
-import java.sql.SQLException;
-
 import static se.deved.service.TransactionService.repository;
-import static se.deved.service.TransactionService.transactions;
 
 public class SeeTransactionHistory extends Command {
     public SeeTransactionHistory() {
